@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Averages</title>
+</head>
+<body>
+    <h1>Average Grades</h1>
+
+    <h2>Add Grade</h2>
+    {% if students %}
+    <form method="POST">
+        <label>Student:</label>
+        <select name="student" required>
+            {% for s in students %}
+            <option value="{{ s }}">{{ s }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Grade:</label>
+        <input type="number" step="0.1" name="grade" required>
+
+        <button type="submit">Add Grade</button>
+    </form>
+    {% else %}
+        <p>No students yet. Go to the Students page and add one.</p>
+    {% endif %}
+
+    <h2>Averages</h2>
+    {% if student_avg %}
+        <table border="1" cellpadding="4">
+            <tr>
+                <th>Student</th>
+                <th>Average</th>
+            </tr>
+            {% for s, avg in student_avg.items() %}
+            <tr>
+                <td>{{ s }}</td>
+                <td>{{ "%.2f"|format(avg) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data yet!</p>
+    {% endif %}
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

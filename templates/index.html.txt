@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Gradebook - Home</title>
+</head>
+<body>
+    <h1>Welcome to the Student Gradebook</h1>
+
+    <p>Choose a page:</p>
+    <ul>
+        <li><a href="/students">Students Page</a></li>
+        <li><a href="/averages">Averages Page</a></li>
+    </ul>
+</body>
+</html>
+

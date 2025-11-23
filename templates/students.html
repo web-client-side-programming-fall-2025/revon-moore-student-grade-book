@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h1>Students</h1>
+
+    <h2>Add a Student</h2>
+    <form method="POST">
+        <input type="text" name="student_name" placeholder="Student Name" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Current Students</h2>
+    {% if students %}
+        <ul>
+        {% for s in students %}
+            <li>{{ s }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No students added yet.</p>
+    {% endif %}
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
